@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="blog">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Blog de NodeJS</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>Blog em NodeJS</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Consumindo a API REST do Blog</h1>
+            <p class="lead text-muted"></p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row" ng-controller="Rest">
+                <div class="col-md-4" ng-repeat="publicacao in publicacoes">
+                    <div class="card mb-4 shadow-sm">
+                        <img ng-src="{{ publicacao.thumbImage }}">
+                        <div class="card-body">
+                            <p class="card-text">{{ publicacao.title }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">{{ publicacao.description }}</small>
+                                <a href="postagem.html?id={{ publicacao.id }}" class="btn btn-sm btn-outline-secondary">LER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="text-muted">
+    <div class="container">
+        <p>Usei o modelo do Bootstrap</p>
+    </div>
+</footer>
+<script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
